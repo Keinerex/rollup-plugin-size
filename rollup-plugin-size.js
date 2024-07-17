@@ -41,7 +41,10 @@ const defaults = {
   exclude: undefined,
   writeFile: true,
   publish: false,
-  columnWidth: 20
+  columnWidth: 20,
+  stripHash(file) {
+    return file;
+  }
 };
 /**
  * Size Plugin for Rollup
@@ -52,6 +55,7 @@ const defaults = {
  * @param {string} [options.filename] file name to save filesizes to disk
  * @param {boolean} [options.publish] option to publish filesizes to size-plugin-store
  * @param {boolean} [options.writeFile] option to save filesizes to disk
+ * @param {function} [options.stripHash] custom function to remove/normalize hashed filenames for comparison
  */
 function bundleSize(_options) {
   const options = Object.assign(defaults, _options);
@@ -109,7 +113,7 @@ function bundleSize(_options) {
       })
     );
 
-    return toMap(files, sizes);
+    return toMap(files.map(options.stripHash), sizes);
   }
 
   async function getCompressedSize(source) {
@@ -170,7 +174,7 @@ function bundleSize(_options) {
     );
 
     // map of de-hashed filenames to their final size
-    const sizesAfter = toMap(assetNames, sizes);
+    const sizesAfter = toMap(assetNames.map(options.stripHash), sizes);
 
     // get a list of unique filenames
     const files = [

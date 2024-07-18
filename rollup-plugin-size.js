@@ -39,7 +39,6 @@ const defaults = {
   pattern: '**/*.{mjs,js,jsx,css,html}',
   exclude: undefined,
   writeFile: true,
-  publish: false,
   columnWidth: 20,
   stripHash(file) {
     return file;
@@ -47,14 +46,13 @@ const defaults = {
 };
 /**
  * Size Plugin for Rollup
- * @param {Object} options
- * @param {'none' | 'gzip' | 'brotli'} [options.compression = 'gzip'] change the compression algorithm used for calculated sizes
- * @param {string} [options.pattern] minimatch pattern of files to track
- * @param {string} [options.exclude] minimatch pattern of files NOT to track
- * @param {string} [options.filename] file name to save filesizes to disk
- * @param {boolean} [options.publish] option to publish filesizes to size-plugin-store
- * @param {boolean} [options.writeFile] option to save filesizes to disk
- * @param {function} [options.stripHash] custom function to remove/normalize hashed filenames for comparison
+ * @param {Object} _options
+ * @param {'none' | 'gzip' | 'brotli'} [_options.compression = 'gzip'] change the compression algorithm used for calculated sizes
+ * @param {string} [_options.pattern] minimatch pattern of files to track
+ * @param {string} [_options.exclude] minimatch pattern of files NOT to track
+ * @param {string} [_options.filename] file name to save filesizes to disk
+ * @param {boolean} [_options.writeFile] option to save filesizes to disk
+ * @param {function} [_options.stripHash] custom function to remove/normalize hashed filenames for comparison
  */
 function bundleSize(_options) {
   const options = Object.assign(defaults, _options);

@@ -3,7 +3,7 @@ declare const size: (options: {
   pattern: string;
   exclude: string;
   filename: string;
-  writFile: boolean;
+  writeFile: boolean;
   stripHash: (file: string) => string
 }) => {name: string; generateBundle: ({}) => void;};
 

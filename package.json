@@ -1,17 +1,14 @@
 {
-  "name": "rollup-plugin-size",
-  "version": "0.3.1",
+  "name": "rollup-plugin-bundle-filesize",
+  "version": "0.3.4",
   "description": "Track compressed Rollup asset sizes over time.",
   "type": "module",
   "main": "rollup-plugin-size.js",
-  "scripts": {
-    "test": "eslint"
-  },
-  "repository": "luwes/rollup-plugin-size",
-  "author": "Wesley Luyten <me@wesleyluyten.com> (https://wesleyluyten.com)",
+  "types": "rollup-plugin-size.d.ts",
+  "repository": "keinerex/rollup-plugin-size",
+  "author": "Yurkov Vladislav",
   "license": "Apache-2.0",
   "dependencies": {
-    "axios": "^1.2.2",
     "chalk": "^5.2.0",
     "ci-env": "^1.17.0",
     "fs-extra": "^11.1.0",
@@ -21,7 +18,6 @@
     "zlib": "^1.0.5"
   },
   "devDependencies": {
-    "eslint": "^8.30.0",
     "prettier": "^2.8.1"
   },
   "prettier": {

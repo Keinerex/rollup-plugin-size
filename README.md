@@ -1,7 +1,7 @@
 <p align="center">
   <h1 align="center">
-    rollup-plugin-size
-    <a href="https://www.npmjs.org/package/rollup-plugin-size"><img src="https://img.shields.io/npm/v/rollup-plugin-size.svg?style=flat&v1" alt="npm"></a>
+    rollup-plugin-bundle-filesize
+    <a href="https://www.npmjs.org/package/rollup-plugin-bundle-filesize"><img src="https://img.shields.io/npm/v/rollup-plugin-bundle-filesize.svg?style=flat&v1" alt="npm"></a>
   </h1>
 </p>
 
@@ -10,17 +10,17 @@
 </p>
 
 <p align="center">
-  <img src="https://i.imgur.com/SE1mlK2.png" width="602" alt="rollup-plugin-size">
+  <img src="https://i.imgur.com/SE1mlK2.png" width="602" alt="rollup-plugin-bundle-filesize">
 </p>
 
 > 🙋 Using Webpack? Check out the original [size-plugin](https://github.com/GoogleChromeLabs/size-plugin).
 
 ## Installation
 
-Install `rollup-plugin-size` as a development dependency using npm:
+Install `rollup-plugin-bundle-filesize` as a development dependency using npm:
 
 ```sh
-npm i -D rollup-plugin-size
+npm i -D rollup-plugin-bundle-filesize
 ```
 
 ---
@@ -31,7 +31,7 @@ Add the plugin to your rollup configuration:
 
 ```diff
 // rollup.config.js
-+ import size from 'rollup-plugin-size';
++ import size from 'rollup-plugin-bundle-filesize';
 
 plugins: [
 +   size()
@@ -40,10 +40,6 @@ plugins: [
 
 ---
 
-## License
-
-[Apache 2.0](LICENSE)
-
 ## Credits
 
-This is a port of [size-plugin](https://github.com/GoogleChromeLabs/size-plugin) by [Jason Miller](https://github.com/developit).
+This is a fork of port of [size-plugin](https://github.com/GoogleChromeLabs/size-plugin) by [Jason Miller](https://github.com/developit).

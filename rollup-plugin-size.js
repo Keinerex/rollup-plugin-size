@@ -23,7 +23,6 @@ import zlib from 'zlib';
 import prettyBytes from 'pretty-bytes';
 import fs from 'fs-extra';
 import { toMap, dedupe, toFileMap } from './utils.js';
-import { publishSizes, publishDiff } from './publish-size.js';
 const glob = promisify(globPromise);
 
 const GZIP_OPTS = {
@@ -147,7 +146,6 @@ function bundleSize(_options) {
         await fs.ensureFile(filename);
         await fs.writeJSON(filename, data);
       }
-      options.publish && (await publishSizes(data, options.filename));
     }
   }
 
@@ -161,7 +159,6 @@ function bundleSize(_options) {
         diff: file.size - file.sizeBefore
       }))
     };
-    options.publish && (await publishDiff(stats, options.filename));
     options.save && (await options.save(stats));
     await writeToDisk(filename, stats);
   }
